@@ -1,6 +1,6 @@
 # Sistema de login/registro com múltiplas funcionalidades.
 
-Em apenas duas semanas de estudos com a linguagem Java, tomei a decisão de desenvolver um projeto de estudo de Registro e Login simples, mas que contenha a validação/autenticação básica de usuário.
+Em apenas duas semanas de estudos com a linguagem Java, tomei a decisão de desenvolver um projeto de estudo de Registro e Login simples, mas que contenha a validação/autenticação básica de usuário. Ainda estou fazendo melhorias para evitar problemas futuros. Trarei atualizações constantemente.
 
 # Práticas essenciais desse desenvolvimento:
 
