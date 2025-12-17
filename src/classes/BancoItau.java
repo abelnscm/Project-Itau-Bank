@@ -1,4 +1,5 @@
-package Classes;
+package classes;
+
 import javax.swing.JOptionPane;
 
 public class BancoItau {
@@ -40,65 +41,68 @@ public class BancoItau {
     public void registerSignUp() {
 
         user = JOptionPane.showInputDialog("Usuário:");
-        if(user.equals("")) {
-            while (true) {
+        if(user.isEmpty()) {
+            do {
                 JOptionPane.showMessageDialog(null, "Esse campo não estar vazio.");
-                user = JOptionPane.showInputDialog("Usuário:");
-                if(!user.equals("")) {
-                    break;
-                }
-            }
+                agency = JOptionPane.showInputDialog("Usuário:");
+
+            } while (agency.isEmpty());
         }
         password = JOptionPane.showInputDialog("Senha:");
-        if(password.equals("")) {
+        if(password.isEmpty()) {
             while (true) {
                 JOptionPane.showMessageDialog(null, "Esse campo não estar vazio.");
-                password = JOptionPane.showInputDialog("Usuário:");
-                if(!password.equals("")) {
+                password = JOptionPane.showInputDialog("Senha:");
+                if(!password.isEmpty()) {
                     inputClientData();
                     break;
                 }
-            }
-        }
 
+            }
+
+        }
+        inputClientData();
     }
 
     private void inputClientData() {
 
         cpf = JOptionPane.showInputDialog("CPF:");
-        if(cpf.equals("")) {
-            while (true) {
+        if(cpf.isEmpty()) {
+            do {
                 JOptionPane.showMessageDialog(null, "Esse campo não estar vazio.");
                 cpf = JOptionPane.showInputDialog("CPF:");
-                if(!cpf.equals("")) {
-                    break;
-                }
-            }
+
+            } while (cpf.isEmpty());
         }
 
         bankAccount = JOptionPane.showInputDialog("Conta bancária:");
-        if(bankAccount.equals("")) {
-            while (true) {
+        if(bankAccount.isEmpty()) {
+            do {
                 JOptionPane.showMessageDialog(null, "Esse campo não estar vazio.");
                 bankAccount = JOptionPane.showInputDialog("Conta bancária:");
-                if(!bankAccount.equals("")) {
-                    break;
-                }
-            }
+
+            } while (bankAccount.isEmpty());
         }
         agency = JOptionPane.showInputDialog("Agência:");
-        if(agency.equals("")) {
-            while (true) {
+        if(agency.isEmpty()) {
+            while(true) {
                 JOptionPane.showMessageDialog(null, "Esse campo não estar vazio.");
-                agency = JOptionPane.showInputDialog("Insira sua agência:");
-                if(!agency.equals("")) {
-                    JOptionPane.showMessageDialog(null, "Encaminhando você para a janela de login!");
+                agency = JOptionPane.showInputDialog("Conta bancária:");
+
+                if (!agency.isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "Encaminhando você para a tela de login.");
+                    login();
                     break;
                 }
             }
+        } else {
+            JOptionPane.showMessageDialog(null, "Encaminhando você para a tela de login.");
+            login();
+            depositar();
         }
 
     }
+
 
     private String showInfo(){
         return "Bem-vindo a sua conta Itaú, " + user + ". \n" + "Agência: " + agency +
@@ -109,13 +113,13 @@ public class BancoItau {
 
         int attempts = 5;
         String userLogin, passwordLogin;
-        userLogin =  JOptionPane.showInputDialog("Nome de usuário para fazer login:");
+        userLogin = JOptionPane.showInputDialog("Nome de usuário para fazer login:");
         passwordLogin = JOptionPane.showInputDialog("Insira sua senha:");
 
 
-        while(true) {
+        while (true) {
 
-            if(userLogin.equals(user) && passwordLogin.equals(password)) {
+            if (userLogin.equals(user) && passwordLogin.equals(password)) {
 
                 JOptionPane.showMessageDialog(null, "Login realizado com sucesso!");
                 JOptionPane.showMessageDialog(null, showInfo());
@@ -124,7 +128,7 @@ public class BancoItau {
             } else {
 
                 JOptionPane.showMessageDialog(null, "Usuário ou senha incorretos. Tente novamente.");
-                userLogin =  JOptionPane.showInputDialog("Nome de usuário para fazer login:");
+                userLogin = JOptionPane.showInputDialog("Nome de usuário para fazer login:");
                 passwordLogin = JOptionPane.showInputDialog("Insira sua senha:");
                 attempts--;
 
@@ -134,12 +138,7 @@ public class BancoItau {
                 JOptionPane.showMessageDialog(null, "Você excedeu o limite de tentativas!");
                 break;
             }
-
-
+        }
     }
-
-
-
-
 }
-}
+
