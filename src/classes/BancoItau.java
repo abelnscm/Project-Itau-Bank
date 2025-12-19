@@ -14,7 +14,7 @@ public class BancoItau {
     private double customerBalance = 0.0;
 
 
-    public void depositar() {
+    private void depositar() {
         String costumerDeposit;
         costumerDeposit = JOptionPane.showInputDialog("Deposite qualquer valor acima de zero: ");
         double deposit = Double.parseDouble(costumerDeposit);
@@ -23,7 +23,7 @@ public class BancoItau {
             if (deposit > 0) {
 
                 customerBalance += deposit;
-                JOptionPane.showMessageDialog(null, "Valor de R$ " + deposit + "foi depositado com sucesso.");
+                JOptionPane.showMessageDialog(null, "Valor de R$ " + deposit + " foi depositado com sucesso.");
                 break;
 
             } else {
@@ -43,7 +43,7 @@ public class BancoItau {
         user = JOptionPane.showInputDialog("Usuário:");
         if(user.isEmpty()) {
             do {
-                JOptionPane.showMessageDialog(null, "Esse campo não estar vazio.");
+                JOptionPane.showMessageDialog(null, "Esse campo não pode estar vazio.");
                 agency = JOptionPane.showInputDialog("Usuário:");
 
             } while (agency.isEmpty());
@@ -51,7 +51,7 @@ public class BancoItau {
         password = JOptionPane.showInputDialog("Senha:");
         if(password.isEmpty()) {
             while (true) {
-                JOptionPane.showMessageDialog(null, "Esse campo não estar vazio.");
+                JOptionPane.showMessageDialog(null, "Esse campo não pode estar vazio.");
                 password = JOptionPane.showInputDialog("Senha:");
                 if(!password.isEmpty()) {
                     inputClientData();
@@ -69,7 +69,7 @@ public class BancoItau {
         cpf = JOptionPane.showInputDialog("CPF:");
         if(cpf.isEmpty()) {
             do {
-                JOptionPane.showMessageDialog(null, "Esse campo não estar vazio.");
+                JOptionPane.showMessageDialog(null, "Esse campo não pode estar vazio.");
                 cpf = JOptionPane.showInputDialog("CPF:");
 
             } while (cpf.isEmpty());
@@ -86,7 +86,7 @@ public class BancoItau {
         agency = JOptionPane.showInputDialog("Agência:");
         if(agency.isEmpty()) {
             while(true) {
-                JOptionPane.showMessageDialog(null, "Esse campo não estar vazio.");
+                JOptionPane.showMessageDialog(null, "Esse campo não pode estar vazio.");
                 agency = JOptionPane.showInputDialog("Conta bancária:");
 
                 if (!agency.isEmpty()) {
@@ -98,7 +98,7 @@ public class BancoItau {
         } else {
             JOptionPane.showMessageDialog(null, "Encaminhando você para a tela de login.");
             login();
-            depositar();
+
         }
 
     }
@@ -122,6 +122,7 @@ public class BancoItau {
             if (userLogin.equals(user) && passwordLogin.equals(password)) {
 
                 JOptionPane.showMessageDialog(null, "Login realizado com sucesso!");
+                depositar();
                 JOptionPane.showMessageDialog(null, showInfo());
                 break;
 
