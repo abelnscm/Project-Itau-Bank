@@ -44,9 +44,9 @@ public class BancoItau {
         if(user.isEmpty()) {
             do {
                 JOptionPane.showMessageDialog(null, "Esse campo não pode estar vazio.");
-                agency = JOptionPane.showInputDialog("Usuário:");
+                user = JOptionPane.showInputDialog("Usuário:");
 
-            } while (agency.isEmpty());
+            } while (user.isEmpty());
         }
         password = JOptionPane.showInputDialog("Senha:");
         if(password.isEmpty()) {
@@ -78,7 +78,7 @@ public class BancoItau {
         bankAccount = JOptionPane.showInputDialog("Conta bancária:");
         if(bankAccount.isEmpty()) {
             do {
-                JOptionPane.showMessageDialog(null, "Esse campo não estar vazio.");
+                JOptionPane.showMessageDialog(null, "Esse campo não pode estar vazio.");
                 bankAccount = JOptionPane.showInputDialog("Conta bancária:");
 
             } while (bankAccount.isEmpty());

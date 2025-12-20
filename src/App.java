@@ -5,11 +5,10 @@ public class App {
 
         // New objects
         BancoItau account001 = new BancoItau();
-
         account001.registerSignUp();
-
     }
-
-
 }
+
+
+
 
