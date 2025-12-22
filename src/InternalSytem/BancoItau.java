@@ -1,4 +1,4 @@
-package classes;
+package InternalSytem;
 
 import javax.swing.JOptionPane;
 
@@ -12,6 +12,18 @@ public class BancoItau {
     private String cpf;
     private String bankAccount;
     private double customerBalance = 0.0;
+
+
+    // Constructor Method
+
+    public BancoItau(String user, String password, String cpf, String agency, String bankAccount){
+        this.user = user;
+        this.password = password;
+        this.cpf = cpf;
+        this.agency = agency;
+        this.bankAccount = bankAccount;
+
+    }
 
 
     private void depositar() {
@@ -141,5 +153,33 @@ public class BancoItau {
             }
         }
     }
+
+    // Getters and Setters methods
+
+   protected String getUser() {
+        return user;
+   }
+
+    protected String getPassword() {
+        return password;
+    }
+
+    protected String getAgency() {
+        return agency;
+    }
+
+    protected String getCpf() {
+        return cpf;
+    }
+    protected double getCostumerBalance() {
+        return customerBalance;
+    }
+
+
+
+
 }
+
+
+
 
