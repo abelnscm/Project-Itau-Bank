@@ -1,8 +1,8 @@
-package InternalSytem;
+package system;
 
 import javax.swing.JOptionPane;
 
-public class BancoItau {
+public class itauBank {
 
     // Atributos da classe
 
@@ -11,40 +11,18 @@ public class BancoItau {
     private String agency;
     private String cpf;
     private String bankAccount;
-    private double customerBalance = 0.0;
+    private double balance = 0.0;
 
 
     // Constructor Method
 
-    public BancoItau(String user, String password, String cpf, String agency, String bankAccount){
+    public itauBank(String user, String password, String cpf, String agency, String bankAccount){
         this.user = user;
         this.password = password;
         this.cpf = cpf;
         this.agency = agency;
         this.bankAccount = bankAccount;
 
-    }
-
-
-    private void depositar() {
-        String costumerDeposit;
-        costumerDeposit = JOptionPane.showInputDialog("Deposite qualquer valor acima de zero: ");
-        double deposit = Double.parseDouble(costumerDeposit);
-
-        while (true) {
-            if (deposit > 0) {
-
-                customerBalance += deposit;
-                JOptionPane.showMessageDialog(null, "Valor de R$ " + deposit + " foi depositado com sucesso.");
-                break;
-
-            } else {
-                JOptionPane.showMessageDialog(null, "Valor mínimo de R$ 1,00. Tente novamente!");
-                costumerDeposit = JOptionPane.showInputDialog("Deposite qualquer valor acima de zero: ");
-                deposit = Double.parseDouble(costumerDeposit);
-            }
-
-        }
     }
 
     // Specific Methods
@@ -118,7 +96,7 @@ public class BancoItau {
 
     private String showInfo(){
         return "Bem-vindo a sua conta Itaú, " + user + ". \n" + "Agência: " + agency +
-                "\n CPF: " + cpf + "\n Conta bancária: " + bankAccount + "\n Saldo da conta: " + customerBalance;
+                "\n CPF: " + cpf + "\n Conta bancária: " + bankAccount + "\n Saldo da conta: " + balance;
     }
 
     private void login() {
@@ -134,7 +112,7 @@ public class BancoItau {
             if (userLogin.equals(user) && passwordLogin.equals(password)) {
 
                 JOptionPane.showMessageDialog(null, "Login realizado com sucesso!");
-                depositar();
+//                depositar();
                 JOptionPane.showMessageDialog(null, showInfo());
                 break;
 
@@ -156,24 +134,6 @@ public class BancoItau {
 
     // Getters and Setters methods
 
-   protected String getUser() {
-        return user;
-   }
-
-    protected String getPassword() {
-        return password;
-    }
-
-    protected String getAgency() {
-        return agency;
-    }
-
-    protected String getCpf() {
-        return cpf;
-    }
-    protected double getCostumerBalance() {
-        return customerBalance;
-    }
 
 
 
