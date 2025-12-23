@@ -1,4 +1,4 @@
-package data_costumer;
+package itau_bank.data_costumer;
 
 import javax.swing.*;
 
@@ -41,17 +41,31 @@ public class Account {
     };
 
 
-    // Getters and Setters
+    // Getters
 
-    private String getAgency() {
+    public String getAgency() {
         return agency;
     }
 
-    private String getAccountNumber() {
+    public String getAccountNumber() {
         return accountNumber;
     }
 
-    private double getBalance() {
+    public double getBalance() {
         return balance;
+    }
+
+    // Setters
+
+    public void setAgency(String agency) {
+        this.agency = agency;
+    }
+
+    public void setAccountNumber(String accountNumber) {
+        this.accountNumber = accountNumber;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
     }
 }
