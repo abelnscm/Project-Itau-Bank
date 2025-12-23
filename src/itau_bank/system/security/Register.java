@@ -51,6 +51,23 @@ public class Register extends User {
 
         setCpf(JOptionPane.showInputDialog("Insira seu CPF para finalizar o cadastro:"));
 
+        while (getCpf().isEmpty()) { // Verifica se o CPF está vazio
+            JOptionPane.showMessageDialog(null, "O campo não pode estar vazio.");
+            setCpf(JOptionPane.showInputDialog("Insira seu CPF para finalizar o cadastro:"));
+        }
+
+        while (getCpf().length() != 11) { // Verifica se o CPF tem 11 dígitos
+            JOptionPane.showMessageDialog(null, "CPF inválido!");
+            setCpf(JOptionPane.showInputDialog("Insira seu CPF para finalizar o cadastro:"));
+        }
+
+        JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso.");
+
+
+
+
+
+
     }
 
 }

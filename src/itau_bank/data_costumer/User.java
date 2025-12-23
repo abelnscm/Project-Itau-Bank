@@ -1,7 +1,5 @@
 package itau_bank.data_costumer;
 
-import javax.swing.*;
-
 public class User {
 
     // Attributes
@@ -9,8 +7,6 @@ public class User {
     private String email;
     private String password;
     private String cpf;
-
-    // Constructor method
 
 
     // Specific methods
