@@ -41,23 +41,15 @@ public class Register extends User {
             } while (secondPassword.isEmpty());
         }
 
-        if (secondPassword.isEmpty()) { // Verifica se o usuário preencheu o campo
-            do {
-                JOptionPane.showMessageDialog(null, "O campo não pode estar vazio.");
-                setPassword(JOptionPane.showInputDialog("Repita sua senha de 6 dígitos:"));
+       if(!secondPassword.equals(getPassword())) { // Verifica se as duas senhas são iguais
+           do {
+               JOptionPane.showMessageDialog(null, "As senhas precisam ser iguais.");
+               secondPassword = (JOptionPane.showInputDialog("Repita sua senha de 6 dígitos:"));
 
-            } while (secondPassword.isEmpty());
+           } while(!secondPassword.equals(getPassword()));
+       }
 
-        }
-
-        if (!secondPassword.equals(getPassword())) { // Verifica se as duas senhas são iguais
-            do {
-                JOptionPane.showMessageDialog(null, "As senhas precisam ser iguais.");
-                setPassword(JOptionPane.showInputDialog("Repita sua senha de 6 dígitos:"));
-
-            } while (!secondPassword.equals(getPassword()) || secondPassword.isEmpty());
-
-        }
+        setCpf(JOptionPane.showInputDialog("Insira seu CPF para finalizar o cadastro:"));
 
     }
 
