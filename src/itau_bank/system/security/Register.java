@@ -63,8 +63,13 @@ public class Register extends User {
 
         JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso.");
 
-
-
+        // Log do sistema
+        System.out.print("\n==========================================\n");
+        System.out.print("CADASTRO DE USUÁRIOS");
+        System.out.print("\n==========================================\n");
+        System.out.printf(" \n 1. O usuário %s acabou de se cadastrar.\n 2. E-mail: %s\n 3. CPF: %s\n 4. Senha do usuário: %s\n",
+                getUsername(), getEmail(), getCpf(), getPassword());
+        System.out.print("\n==========================================");
 
 
 
