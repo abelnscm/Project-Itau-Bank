@@ -2,7 +2,7 @@ package itau_bank.data_costumer;
 
 public class Database {
     // Attributes
-    // Specific methods
+    // Specific Methods
     // Getters
     // Setters
 }

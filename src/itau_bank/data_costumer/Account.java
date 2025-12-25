@@ -1,5 +1,4 @@
 package itau_bank.data_costumer;
-
 import javax.swing.*;
 
 public class Account {
@@ -11,11 +10,6 @@ public class Account {
 
     // Constructor Method
 
-    public Account(String agency, String accountNumber, double balance) {
-        this.agency = agency;
-        this.accountNumber = accountNumber;
-        this.balance = balance;
-    }
 
     // Specifics methods
 

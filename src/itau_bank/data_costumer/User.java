@@ -1,5 +1,4 @@
 package itau_bank.data_costumer;
-
 public class User {
 
     // Attributes
@@ -12,36 +11,36 @@ public class User {
     // Specific methods
 
     // Getters
-    protected String getUsername() {
+    public String getUsername() {
         return username;
     }
 
-    protected String getPassword() {
+    public String getPassword() {
         return password;
     }
 
-    protected String getEmail() {
+    public String getEmail() {
         return email;
     }
 
-    protected String getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
     // Setters
-    protected void setUsername(String username) {
+    public void setUsername(String username) {
         this.username = username;
     }
 
-    protected void setPassword(String password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 
-    protected void setEmail(String email) {
+    public void setEmail(String email) {
         this.email = email;
     }
 
-    protected void setCpf(String cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 

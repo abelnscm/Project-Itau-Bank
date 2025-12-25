@@ -2,75 +2,68 @@ package itau_bank.system.security;
 import itau_bank.data_costumer.User;
 import javax.swing.*;
 
-public class Register extends User {
-    public void register() {
+public class Register {
 
-        setEmail(JOptionPane.showInputDialog("Insira um e-mail:"));
-        if(getEmail().isEmpty()){ // Verifica se o usuário preencheu o campo
-            do {
+    // Specific Methods
+    public User register() {
+        User user = new User();
+
+        // e-mail
+        user.setEmail(JOptionPane.showInputDialog("Insira um e-mail:"));
+        while (user.getEmail() == null || user.getEmail().isEmpty()) { // Verifica se o usuário preencheu o campo
             JOptionPane.showMessageDialog(null, "O campo não pode estar vazio.");
-            setEmail(JOptionPane.showInputDialog("Insira um e-mail: "));
-
-            } while (getEmail().isEmpty());
+            user.setEmail(JOptionPane.showInputDialog("Insira um e-mail:"));
         }
 
-        setUsername(JOptionPane.showInputDialog("Escolha um nome de usuário:"));
-        if(getUsername().isEmpty()){ // Verifica se o usuário preencheu o campo
-            do {
-                JOptionPane.showMessageDialog(null, "O campo não pode estar vazio.");
-                setUsername(JOptionPane.showInputDialog("Escolha um nome de usuário:"));
-
-            } while (getUsername().isEmpty());
+        // username
+        user.setUsername(JOptionPane.showInputDialog("Escolha um nome de usuário:"));
+        while (user.getUsername() == null || user.getUsername().isEmpty()) { // Verifica se o usuário preencheu o campo
+            JOptionPane.showMessageDialog(null, "O campo não pode estar vazio.");
+            user.setUsername(JOptionPane.showInputDialog("Escolha um nome de usuário:"));
         }
 
-        setPassword(JOptionPane.showInputDialog("Crie uma senha de 6 dígitos:"));
-        if(getPassword().isEmpty()){ // Verifica se o usuário preencheu o campo
-            do {
-                JOptionPane.showMessageDialog(null, "O campo não pode estar vazio.");
-                setPassword(JOptionPane.showInputDialog("Crie uma senha de 6 dígitos:"));
-
-            } while (getPassword().isEmpty());
+        // password
+        user.setPassword(JOptionPane.showInputDialog("Crie uma senha de 6 dígitos:"));
+        while (user.getPassword() == null || user.getPassword().isEmpty()) { // Verifica se o usuário preencheu o campo
+            JOptionPane.showMessageDialog(null, "O campo não pode estar vazio.");
+            user.setPassword(JOptionPane.showInputDialog("Crie uma senha de 6 dígitos:"));
         }
 
+        // Confirm password
         String secondPassword = JOptionPane.showInputDialog("Repita sua senha:");
-        if(secondPassword.isEmpty()){ // Verifica se o usuário preencheu o campo
-            do {
-                JOptionPane.showMessageDialog(null, "O campo não pode estar vazio.");
-                secondPassword = (JOptionPane.showInputDialog("Repita sua senha de 6 dígitos:"));
-
-            } while (secondPassword.isEmpty());
+        while (!secondPassword.equals(user.getPassword())) { // Confirma se as senhas são iguais
+            JOptionPane.showMessageDialog(null, "As senhas precisam ser iguais.");
+            secondPassword = JOptionPane.showInputDialog("Repita sua senha:");
         }
 
-       if(!secondPassword.equals(getPassword())) { // Verifica se as duas senhas são iguais
-           do {
-               JOptionPane.showMessageDialog(null, "As senhas precisam ser iguais.");
-               secondPassword = (JOptionPane.showInputDialog("Repita sua senha de 6 dígitos:"));
-
-           } while(!secondPassword.equals(getPassword()));
-       }
-
-        setCpf(JOptionPane.showInputDialog("Insira seu CPF para finalizar o cadastro:"));
-
-        while (getCpf().isEmpty()) { // Verifica se o CPF está vazio
+        // CPF
+        user.setCpf(JOptionPane.showInputDialog("Insira seu CPF para finalizar o cadastro:"));
+        while (user.getCpf() == null || user.getCpf().isEmpty()) { // Verifica se o usuário preencheu o campo
             JOptionPane.showMessageDialog(null, "O campo não pode estar vazio.");
-            setCpf(JOptionPane.showInputDialog("Insira seu CPF para finalizar o cadastro:"));
+            user.setCpf(JOptionPane.showInputDialog("Insira seu CPF para finalizar o cadastro:"));
         }
 
-        while (getCpf().length() != 11) { // Verifica se o CPF tem 11 dígitos
+        while (user.getCpf() == null || user.getCpf().length() != 11) { // Verifica se o CPF tem 11 dígitos
             JOptionPane.showMessageDialog(null, "CPF inválido!");
-            setCpf(JOptionPane.showInputDialog("Insira seu CPF para finalizar o cadastro:"));
+            user.setCpf(JOptionPane.showInputDialog("Insira seu CPF para finalizar o cadastro:"));
         }
 
-        JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso.");
+        JOptionPane.showMessageDialog(null, "Cadastro finalizado.");
 
-        // Log do sistema
+
+
+        ////////////////////////////////////////////////////////////////////////////////////////
+        /// Log do sistema.
+        ////////////////////////////////////////////////////////////////////////////////////////
+
         System.out.print("\n==========================================\n");
         System.out.print("CADASTRO DE USUÁRIOS");
         System.out.print("\n==========================================\n");
         System.out.printf(" \n 1. O usuário %s acabou de se cadastrar.\n 2. E-mail: %s\n 3. CPF: %s\n 4. Senha do usuário: %s\n",
-                getUsername(), getEmail(), getCpf(), getPassword());
+                user.getUsername(), user.getEmail(), user.getCpf(), user.getPassword());
         System.out.print("\n==========================================");
 
+        return user;
 
 
     }
