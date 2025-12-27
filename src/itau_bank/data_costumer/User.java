@@ -6,8 +6,16 @@ public class User {
     private String email;
     private String password;
     private String cpf;
+    private Account account;
 
-    // Specific methods
+    // Constructor method
+    public User(String username, String email, String password, String cpf, Account account) {
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.cpf = cpf;
+        this.account = account;
+    }
 
     // Getters
     public String getUsername() {
@@ -26,23 +34,9 @@ public class User {
         return cpf;
     }
 
-    // Setters
-    public void setUsername(String username) {
-        this.username = username;
+    public Account getAccount(){
+        return this.account;
     }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
-
 
 
 }

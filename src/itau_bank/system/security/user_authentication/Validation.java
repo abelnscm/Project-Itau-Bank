@@ -1,9 +1,8 @@
-package itau_bank.system.security;
+package itau_bank.system.security.user_authentication;
 
 public class Validation {
 
     // Specific methods
-
     public boolean isNullOrEmpty(String value) {  // Verifica se o usuário digitou ou cancelou (NUll)
         return value == null || value.isEmpty();
     }

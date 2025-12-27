@@ -1,4 +1,5 @@
-package itau_bank.system.security;
+package itau_bank.system.security.user_authentication;
+import itau_bank.data_costumer.Account;
 import itau_bank.data_costumer.User;
 import javax.swing.*;
 
@@ -7,32 +8,36 @@ public class Register {
     // Specific Methods
     public User register() {
 
-        User user = new User();
+        // attributes
         Validation validation = new Validation();
+        String email;
+        String username;
+        String password;
+        String cpf;
 
         // e-mail
-        user.setEmail(JOptionPane.showInputDialog("Insira um e-mail:"));
-        while(validation.isNullOrEmpty(user.getEmail())) { // Verifica se o usuário preencheu o campo
+        email = (JOptionPane.showInputDialog("Insira um e-mail:"));
+        while(validation.isNullOrEmpty(email)) { // Verifica se o usuário preencheu o campo
             JOptionPane.showMessageDialog(null, "O campo não pode estar vazio.");
-            user.setEmail(JOptionPane.showInputDialog("Insira um e-mail:"));
+            email = (JOptionPane.showInputDialog("Insira um e-mail:"));
         }
 
         // username
-        user.setUsername(JOptionPane.showInputDialog("Escolha um nome de usuário:"));
-        while(validation.isNullOrEmpty(user.getUsername())) { // Verifica se o usuário preencheu o campo
+        username = (JOptionPane.showInputDialog("Escolha um nome de usuário:"));
+        while(validation.isNullOrEmpty(username)) { // Verifica se o usuário preencheu o campo
             JOptionPane.showMessageDialog(null, "O campo não pode estar vazio.");
-            user.setUsername(JOptionPane.showInputDialog("Escolha um nome de usuário:"));
+            username = (JOptionPane.showInputDialog("Escolha um nome de usuário:"));
         }
 
         // password
-        user.setPassword(JOptionPane.showInputDialog("Crie uma senha de 6 dígitos:"));
-        while (validation.isNullOrEmpty(user.getPassword())) { // Verifica se o usuário preencheu o campo
+        password = (JOptionPane.showInputDialog("Crie uma senha de 6 dígitos:"));
+        while (validation.isNullOrEmpty(password)) { // Verifica se o usuário preencheu
             JOptionPane.showMessageDialog(null, "O campo não pode estar vazio.");
-            user.setPassword(JOptionPane.showInputDialog("Crie uma senha de 6 dígitos:"));
+            password = (JOptionPane.showInputDialog("Crie uma senha de 6 dígitos:"));
         }
-        while (validation.isPasswordValid(user.getPassword())) { // Verifica se a senha possui 6 dígitos
+        while (validation.isPasswordValid(password)) { // Verifica se a senha possui 6 dígitos
             JOptionPane.showMessageDialog(null, "A senha precisa ter 6 dígitos");
-            user.setPassword(JOptionPane.showInputDialog("Crie sua senha:"));
+            password = (JOptionPane.showInputDialog("Crie sua senha:"));
         }
 
         // Confirm password
@@ -43,21 +48,24 @@ public class Register {
             secondPassword = JOptionPane.showInputDialog("Repita sua senha:");
         }
 
-        while(validation.isTwoPasswordValid(user.getPassword(), secondPassword)) { // Verifica se as senhas são iguais
+        while(validation.isTwoPasswordValid(password, secondPassword)) { // Verifica se as senhas são iguais
             JOptionPane.showMessageDialog(null, "As senhas não podem ser diferentes.");
             secondPassword = JOptionPane.showInputDialog("Repita sua senha:");
         }
 
         // CPF
-        user.setCpf(JOptionPane.showInputDialog("Insira seu CPF para finalizar o cadastro:"));
-        while (validation.isNullOrEmpty(user.getCpf())) { // Verifica se o usuário preencheu o campo
+        cpf = (JOptionPane.showInputDialog("Insira seu CPF para finalizar o cadastro:"));
+        while (validation.isNullOrEmpty(cpf)) { // Verifica se o usuário preencheu o campo
             JOptionPane.showMessageDialog(null, "O campo não pode estar vazio.");
-            user.setCpf(JOptionPane.showInputDialog("Insira seu CPF para finalizar o cadastro:"));
+            cpf = (JOptionPane.showInputDialog("Insira seu CPF para finalizar o cadastro:"));
         }
-        while (validation.isCpfValid(user.getCpf())) { // Verifica se o CPF tem 11 dígitos
+        while (validation.isCpfValid(cpf)) { // Verifica se o CPF tem 11 dígitos
             JOptionPane.showMessageDialog(null, "CPF inválido!");
-            user.setCpf(JOptionPane.showInputDialog("Insira seu CPF para finalizar o cadastro:"));
+            cpf = (JOptionPane.showInputDialog("Insira seu CPF para finalizar o cadastro:"));
         }
+
+        Account account = new Account("0001", "00001"); // Cria uma conta
+        User user = new User(username, email, password, cpf, account); // Constrói o usuário
 
         JOptionPane.showMessageDialog(null, "Cadastro finalizado.");
 
@@ -71,7 +79,7 @@ public class Register {
         System.out.print("CADASTRO DE USUÁRIOS");
         System.out.print("\n==========================================\n");
         System.out.printf(" \n 1. O usuário %s acabou de se cadastrar.\n 2. E-mail: %s\n 3. CPF: %s\n 4. Senha do usuário: %s\n",
-                user.getUsername(), user.getEmail(), user.getCpf(), user.getPassword());
+                username, email, cpf, "***********");
         System.out.print("\n==========================================");
 
         return user;

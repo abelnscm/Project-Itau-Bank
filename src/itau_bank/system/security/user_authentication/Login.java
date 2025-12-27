@@ -1,4 +1,4 @@
-package itau_bank.system.security;
+package itau_bank.system.security.user_authentication;
 
 public class Login {
     // Attributes
