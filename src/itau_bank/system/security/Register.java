@@ -30,7 +30,7 @@ public class Register {
             JOptionPane.showMessageDialog(null, "O campo não pode estar vazio.");
             user.setPassword(JOptionPane.showInputDialog("Crie uma senha de 6 dígitos:"));
         }
-        while (validation.isPassowordValid(user.getPassword())) { // Verifica se a senha possui 6 dígitos
+        while (validation.isPasswordValid(user.getPassword())) { // Verifica se a senha possui 6 dígitos
             JOptionPane.showMessageDialog(null, "A senha precisa ter 6 dígitos");
             user.setPassword(JOptionPane.showInputDialog("Crie sua senha:"));
         }

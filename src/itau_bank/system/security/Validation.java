@@ -7,7 +7,7 @@ public class Validation {
     public boolean isNullOrEmpty(String value) {  // Verifica se o usuário digitou ou cancelou (NUll)
         return value == null || value.isEmpty();
     }
-    public boolean isPassowordValid(String password) { // Verifica se a senha possui 6 dígitos
+    public boolean isPasswordValid(String password) { // Verifica se a senha possui 6 dígitos
         return password != null && password.length() != 6;
     }
     public boolean isTwoPasswordValid(String passwordOne, String passwordTwo){ // Verifica se as senhas são iguais
