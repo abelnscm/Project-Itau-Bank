@@ -73,12 +73,8 @@ public class Register {
 
         Account account = new Account("0001", "00001"); // Cria uma conta
         User user = new User(username, email, password, cpf, account); // Constrói o usuário
-        database.add(user);
-
-
-
+        database.add(user); // Adiciona no banco de dados (Database)
         JOptionPane.showMessageDialog(null, "Cadastro finalizado.");
-
 
 
         ////////////////////////////////////////////////////////////////////////////////////////
