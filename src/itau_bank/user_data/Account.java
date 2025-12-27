@@ -1,4 +1,4 @@
-package itau_bank.data_costumer;
+package itau_bank.user_data;
 
 public class Account {
     // Attributes
