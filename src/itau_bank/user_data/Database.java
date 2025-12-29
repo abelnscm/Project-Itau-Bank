@@ -6,12 +6,15 @@ public class Database {
     // Attributes
     private ArrayList<User> users = new ArrayList<>();
 
+
     // Specific method
     public void add(User user) {
         users.add(user);
     }
 
-    // Specific methods
+
+
+
     public void showUsers() {
 
         if (users.isEmpty()) { // Verifica se a lista está vazia

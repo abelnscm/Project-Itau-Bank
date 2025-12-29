@@ -8,8 +8,6 @@ public class ItauBank {
         Database db = new Database();
         Register register = new Register(db);
         User user001 = register.register();
-        db.showUsers();
-
     }
 }
 

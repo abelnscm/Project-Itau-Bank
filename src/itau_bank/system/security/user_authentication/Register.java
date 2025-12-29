@@ -1,8 +1,10 @@
 package itau_bank.system.security.user_authentication;
 import itau_bank.user_data.Account;
+import itau_bank.user_data.AccountGenerator;
 import itau_bank.user_data.Database;
 import itau_bank.user_data.User;
 import javax.swing.*;
+
 
 public class Register {
 
@@ -11,6 +13,7 @@ public class Register {
     public Register(Database database) {
         this.database = database;
     }
+
 
     // Specific Methods
     public User register() {
@@ -71,7 +74,8 @@ public class Register {
             cpf = (JOptionPane.showInputDialog("Insira seu CPF para finalizar o cadastro:"));
         }
 
-        Account account = new Account("0001", "00001"); // Cria uma conta
+        AccountGenerator acc = new AccountGenerator();
+        Account account = new Account(acc.generateAgency(), acc.generateAccount()); // Cria uma conta para o usuário
         User user = new User(username, email, password, cpf, account); // Constrói o usuário
         database.add(user); // Adiciona no banco de dados (Database)
         JOptionPane.showMessageDialog(null, "Cadastro finalizado.");
@@ -84,8 +88,8 @@ public class Register {
         System.out.print("\n==========================================\n");
         System.out.print("CADASTRO DE USUÁRIO");
         System.out.print("\n==========================================\n");
-        System.out.printf(" \n 1. O usuário %s acabou de se cadastrar.\n 2. E-mail: %s\n 3. CPF: %s\n 4. Senha do usuário: %s\n",
-                username, email, cpf, "***********");
+        System.out.printf(" \n 1. O usuário %s acabou de se cadastrar.\n 2. E-mail: %s\n 3. CPF: %s\n 4. Senha do usuário: %s\n 5. Agência: %s " +
+                "\n 6. Conta bancária:%s", username, email, cpf, "******", account.getAccountNumber(), account.getAgency());
 
         return user;
 
