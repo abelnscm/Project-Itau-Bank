@@ -17,13 +17,11 @@ public class User {
         this.account = account;
     }
 
+    // Specific methods
+
     // Getters
     public String getUsername() {
         return username;
-    }
-
-    public String getPassword() {
-        return password;
     }
 
     public String getEmail() {

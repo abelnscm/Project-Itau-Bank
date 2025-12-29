@@ -9,6 +9,7 @@ import javax.swing.*;
 public class Register {
 
     // Attributes
+    private AccountGenerator acc = new AccountGenerator();
     private Database database;
     public Register(Database database) {
         this.database = database;
@@ -24,6 +25,8 @@ public class Register {
         String username;
         String password;
         String cpf;
+        String agency;
+        String accountNumber;
 
         // e-mail
         email = (JOptionPane.showInputDialog("Insira um e-mail:"));
@@ -74,8 +77,10 @@ public class Register {
             cpf = (JOptionPane.showInputDialog("Insira seu CPF para finalizar o cadastro:"));
         }
 
-        AccountGenerator acc = new AccountGenerator();
-        Account account = new Account(acc.generateAgency(), acc.generateAccount()); // Cria uma conta para o usuário
+        do {agency = acc.generateAgency(); accountNumber = acc.generateAccount();} // Autenticação de conta bancária e agência
+        while (database.accountExists(agency, accountNumber));
+
+        Account account = new Account(agency, accountNumber);
         User user = new User(username, email, password, cpf, account); // Constrói o usuário
         database.add(user); // Adiciona no banco de dados (Database)
         JOptionPane.showMessageDialog(null, "Cadastro finalizado.");
@@ -92,7 +97,6 @@ public class Register {
                 "\n 6. Conta bancária:%s", username, email, cpf, "******", account.getAccountNumber(), account.getAgency());
 
         return user;
-
 
     }
 
