@@ -5,35 +5,30 @@ public class User {
     private String username;
     private String email;
     private String password;
-    private String cpf;
+    private String CPF;
     private Account account;
 
     // Constructor method
-    public User(String username, String email, String password, String cpf, Account account) {
+    public User(String username, String email, String password, String CPF, Account account) {
         this.username = username;
         this.email = email;
         this.password = password;
-        this.cpf = cpf;
+        this.CPF = CPF;
         this.account = account;
     }
-
     // Specific methods
 
     // Getters
-    public String getUsername() {
-        return username;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getCpf() {
-        return cpf;
-    }
-
     public Account getAccount(){
         return this.account;
+    }
+
+    public String getCPF() {
+        return this.CPF;
+    }
+
+    public String getPassword() {
+        return this.password;
     }
 
 
