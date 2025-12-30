@@ -4,6 +4,8 @@ import itau_bank.user_data.Database;
 import itau_bank.user_data.User;
 import itau_bank.system.security.Register.Register;
 
+import javax.swing.*;
+
 public class ItauBank {
     public static void main(String[] args) {
 
@@ -15,9 +17,6 @@ public class ItauBank {
         // Methods executions
         User user001 = register.register();
         login001.login();
-
-
-
 
 }
 }

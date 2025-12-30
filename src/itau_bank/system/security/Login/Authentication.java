@@ -1,41 +1,32 @@
 package itau_bank.system.security.Login;
 import itau_bank.system.security.Register.Validation;
 import itau_bank.user_data.Database;
-import itau_bank.tools.Message;
 import itau_bank.user_data.User;
 
 public class Authentication {
 
-
     // Attributes
-    private Validation validation = new Validation();
+    private Validation validation;
     private Database database;
     private User user;
 
     // Constructor
     public Authentication(Database database) {
         this.database = database;
+        this.validation = new Validation();
     }
 
     // Auth method
-    public boolean auth(String CPF, String password){
+    public Boolean auth(String CPF, String password) {
+        for(User user : database.getDatabase()){
+            boolean sameCPF = user.getCPF().equals(CPF);
+            boolean samePassword = user.getPassword().equals(password);
 
-        if(validation.isNullOrEmpty(CPF) || validation.isNullOrEmpty(password)){
-            Message.info("Insira seu CPF e sua senha.");
-        }
-        if(validation.isNullOrEmpty(CPF) && validation.isNullOrEmpty(password)){
-            Message.info("Preencha os campos para fazer login.");
-        }
-        for(User db: database.getDatabase()) {
-            if(validation.isNullOrEmpty(db.getCPF()) || validation.isNullOrEmpty(db.getPassword())){
-                Message.info("Usuário não encontrado.");
+            if(sameCPF & samePassword) {
+                return true;
             }
-            if(validation.isNullOrEmpty(db.getCPF()) && validation.isNullOrEmpty(db.getPassword())){
-                Message.info("Usuário não encontrado.");
-            }
-
         }
-        return true;
-
+        return false;
     }
+
 }
