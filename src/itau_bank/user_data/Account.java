@@ -1,7 +1,6 @@
 package itau_bank.user_data;
-
 import itau_bank.tools.Message;
-import javax.swing.*;
+
 
 public class Account {
     // Attributes

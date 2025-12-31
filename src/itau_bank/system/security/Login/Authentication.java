@@ -17,16 +17,16 @@ public class Authentication {
     }
 
     // Auth method
-    public Boolean auth(String CPF, String password) {
+    public User auth(String CPF, String password) {
         for(User user : database.getDatabase()){
             boolean sameCPF = user.getCPF().equals(CPF);
             boolean samePassword = user.getPassword().equals(password);
 
-            if(sameCPF & samePassword) {
-                return true;
+            if(sameCPF && samePassword) {
+                return user;
             }
         }
-        return false;
+        return null;
     }
 
 }

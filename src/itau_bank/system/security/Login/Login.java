@@ -3,7 +3,7 @@ import itau_bank.system.security.Register.Validation;
 import itau_bank.tools.Input;
 import itau_bank.tools.Message;
 import itau_bank.user_data.Database;
-
+import itau_bank.user_data.User;
 import javax.swing.*;
 
 public class Login {
@@ -21,8 +21,7 @@ public class Login {
     }
 
     // Specific methods
-    public void login() {
-
+    public User login() {
         Message.info("Iniciando sessão de login....");
 
         // Attributes
@@ -32,14 +31,15 @@ public class Login {
         // Inputs
         CPF = inputRequired("Insira seu CPF:");
         password = inputRequired("Insira sua senha:");
+        User user = auth.auth(CPF, password); // Verificação no banco de dados
 
-        if(auth.auth(CPF, password)) {
-            Message.info("O usuário está logado.");
+        if (user != null) {
+            Message.info("Usuário logado com sucesso!");
+            return user;
         } else {
-            Message.info("Usuário não encontrado");
-
+            Message.info("Usuário não encontrado.");
+            return null;
         }
-
     }
 
     // Required Method

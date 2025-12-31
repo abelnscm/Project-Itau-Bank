@@ -25,6 +25,7 @@ public class Register {
         String email;
         String username;
         String password;
+        String secondPassword;
         String CPF;
         String agency;
         String accountNumber;
@@ -55,13 +56,7 @@ public class Register {
         }
 
         // Confirm password
-        String secondPassword;
         secondPassword = Input.input("Repita sua senha:");
-        while (validation.isNullOrEmpty(secondPassword)) { // Verifica se o campo está vazio
-            Message.info("O campo não pode estar vazio.");
-            secondPassword = Input.input("Repita sua senha:");
-        }
-
         while(validation.isTwoPasswordValid(password, secondPassword)) { // Verifica se as senhas são iguais
             Message.info("As senhas não podem ser diferentes.");
             secondPassword = Input.input("Repita sua senha:");

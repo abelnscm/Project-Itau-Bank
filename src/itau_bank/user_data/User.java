@@ -31,5 +31,9 @@ public class User {
         return this.password;
     }
 
+    public String getUsername(){
+        return username;
+    }
+
 
 }
