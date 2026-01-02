@@ -1,4 +1,4 @@
-package itau_bank.system.security.Register;
+package itau_bank.system.security.register.tools;
 
 public class Validation {
 

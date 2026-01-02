@@ -12,22 +12,26 @@ public class Account {
     public Account(String agency, String accountNumber) {
         this.agency = agency;
         this.accountNumber = accountNumber;
-        this.balance = 0.0;
+        this.balance = 0;
     }
 
     // Financial methods
-    public void deposit(Double value) {
-      this.balance += value;
-    }
-    public void withdraw(Double value){
-        if(value <= 0) {
-            Message.info("O valor mínimo para saque é de R$ 20,00.");
-        } else if (value > this.balance) {
-            Message.info("Você não tem saldo suficiente para efetuar essa transação.");
-        } else {
-            this.balance -= value;
+    public void withdrawal(Double amount){
+        if(amount < 20){
+            Message.info("O valor mínimo para saque é de R$ 20,00");
+            return;
         }
+        if(amount > this.balance) {
+            Message.info("Você não tem saldo suficiente.");
+            return;
+        }
+        this.balance -= amount;
+        Message.info("Saque realizado com sucesso!");
+
+
+
     }
+
 
     // Getters
     public String getAgency() {
@@ -36,6 +40,8 @@ public class Account {
     public String getAccountNumber() {
         return accountNumber;
     }
+
+
 
 
 

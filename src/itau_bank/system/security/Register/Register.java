@@ -1,11 +1,11 @@
-package itau_bank.system.security.Register;
+package itau_bank.system.security.register;
+import itau_bank.system.security.register.tools.Validation;
 import itau_bank.tools.Input;
 import itau_bank.tools.Message;
 import itau_bank.user_data.Account;
-import itau_bank.tools.AccountGenerator;
+import itau_bank.system.security.register.tools.AccountGenerator;
 import itau_bank.user_data.Database;
 import itau_bank.user_data.User;
-import javax.swing.*;
 
 
 public class Register {

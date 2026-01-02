@@ -1,5 +1,5 @@
-package itau_bank.system.security.Login;
-import itau_bank.system.security.Register.Validation;
+package itau_bank.system.security.login;
+import itau_bank.system.security.register.tools.Validation;
 import itau_bank.user_data.Database;
 import itau_bank.user_data.User;
 
@@ -28,5 +28,6 @@ public class Authentication {
         }
         return null;
     }
+
 
 }
