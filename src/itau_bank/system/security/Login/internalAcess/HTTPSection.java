@@ -1,18 +1,20 @@
 package itau_bank.system.security.login.internalAcess;
+import itau_bank.system.security.login.internalAcess.tools.Messages;
 import itau_bank.tools.Message;
 import itau_bank.system.security.login.internalAcess.tools.Options;
 import itau_bank.user_data.User;
-
 
 public class HTTPSection {
     // Attributes
     private User user;
     private Options options;
+    private Messages messages;
 
     // Constructor
     public HTTPSection(User user) {
         this.user = user;
         this.options = new Options(user);
+        this.messages = new Messages(user);
 
     }
 
@@ -28,8 +30,7 @@ public class HTTPSection {
 
     // Client server
     private void menu() {
-        String welcome = String.format("Bem-vindo ao banco Itáu, %s.", user.getUsername());
-        Message.info(welcome);
+        messages.welcome();
         options.choice(user);
     }
 

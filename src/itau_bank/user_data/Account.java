@@ -1,4 +1,5 @@
 package itau_bank.user_data;
+import itau_bank.system.security.login.internalAcess.tools.Messages;
 import itau_bank.tools.Message;
 
 
@@ -27,11 +28,16 @@ public class Account {
         }
         this.balance -= amount;
         Message.info("Saque realizado com sucesso!");
-
-
-
     }
 
+    public void deposit(Double amount) {
+        if(amount < 0.25) {
+            Message.info("O valor mínimo para depósito é de R$ 0,25");
+            return;
+        }
+        Message.info("Depósito realizado com sucesso!");
+        this.balance += amount;
+    }
 
     // Getters
     public String getAgency() {

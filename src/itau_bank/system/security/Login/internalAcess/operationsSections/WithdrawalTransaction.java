@@ -5,25 +5,20 @@ import javax.swing.*;
 
 public class WithdrawalTransaction {
     // Attributes
-    private int choice;
     private User user;
 
     // Constructor
-
     public WithdrawalTransaction(User user) {
         this.user = user;
     }
 
-
-    // Exectuions methods
-
+    // Executions methods
     public void withdrawal(){
         double withdrawal = Double.parseDouble(Input.input("Quanto deseja sacar?"));
         user.getAccount().withdrawal(withdrawal);
     }
 
 
-    // Users choices
 
 
 
