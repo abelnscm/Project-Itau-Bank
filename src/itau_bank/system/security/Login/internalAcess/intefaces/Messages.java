@@ -23,6 +23,10 @@ public class Messages {
         JOptionPane.showMessageDialog(null, getWelcomeMessage());
     }
 
+    public String messageCase() {
+        return String.format("O que deseja, %s?", user.getUsername());
+    }
+
     
     
 }

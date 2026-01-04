@@ -1,5 +1,4 @@
 package itau_bank.system.security.login.internalAcess.operationsSections;
-
 import itau_bank.tools.Input;
 import itau_bank.system.security.login.internalAcess.user_data.User;
 

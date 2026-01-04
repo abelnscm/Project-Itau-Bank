@@ -32,6 +32,7 @@ public class Account {
             Message.info("Você não tem saldo suficiente.");
             return;
         }
+
         this.balance -= amount;
         Message.info("Saque realizado com sucesso!");
     }
@@ -45,8 +46,12 @@ public class Account {
         this.balance += amount;
     }
 
-
-
+    public void PIX(double value){
+        while(value < 0.10) {
+            Message.info("O valor mínimo de transferência via PIX é de R$ 0,10");
+        }
+        this.balance -= value;
+    }
 
     // Getters
     public String getAgency() {
@@ -58,6 +63,10 @@ public class Account {
     public User getUser() {
         return user;
     }
+    public double getBalance(){
+        return this.balance;
+    }
+
 
     // Setters
     public void setUser(User user) {
