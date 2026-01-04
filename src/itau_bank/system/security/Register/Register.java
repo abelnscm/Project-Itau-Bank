@@ -2,10 +2,10 @@ package itau_bank.system.security.register;
 import itau_bank.system.security.register.tools.Validation;
 import itau_bank.tools.Input;
 import itau_bank.tools.Message;
-import itau_bank.user_data.Account;
+import itau_bank.system.security.login.internalAcess.user_data.Account;
 import itau_bank.system.security.register.tools.AccountGenerator;
-import itau_bank.user_data.Database;
-import itau_bank.user_data.User;
+import itau_bank.system.security.login.internalAcess.user_data.Database;
+import itau_bank.system.security.login.internalAcess.user_data.User;
 
 
 public class Register {
@@ -78,6 +78,7 @@ public class Register {
 
         Account account = new Account(agency, accountNumber); // A conta é atribuída ao usuário
         User user = new User(username, email, password, CPF, account); // Constrói o usuário
+        account.setUser(user); // Associa o usuário à conta
         database.add(user); // Adiciona no banco de dados (Database)
         Message.info("Cadastro finalizado.");
 

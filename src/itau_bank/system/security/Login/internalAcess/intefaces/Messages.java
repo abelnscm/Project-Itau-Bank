@@ -1,8 +1,6 @@
-package itau_bank.system.security.login.internalAcess.tools;
-import itau_bank.user_data.User;
+package itau_bank.system.security.login.internalAcess.intefaces;
+import itau_bank.system.security.login.internalAcess.user_data.User;
 import javax.swing.*;
-
-import static javax.swing.JOptionPane.showMessageDialog;
 
 public class Messages {
     
@@ -15,7 +13,6 @@ public class Messages {
         this.user = user;
         this.username = user.getUsername();
     }
-
 
     // Messages methods
     private String getWelcomeMessage() {

@@ -1,8 +1,8 @@
 package itau_bank.system;
 import itau_bank.system.security.login.internalAcess.HTTPSection;
 import itau_bank.system.security.login.Login;
-import itau_bank.user_data.Database;
-import itau_bank.user_data.User;
+import itau_bank.system.security.login.internalAcess.user_data.Database;
+import itau_bank.system.security.login.internalAcess.user_data.User;
 import itau_bank.system.security.register.Register;
 
 public class ItauBank {

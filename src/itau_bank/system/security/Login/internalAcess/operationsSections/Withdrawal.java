@@ -1,19 +1,18 @@
 package itau_bank.system.security.login.internalAcess.operationsSections;
 import itau_bank.tools.Input;
-import itau_bank.user_data.User;
-import javax.swing.*;
+import itau_bank.system.security.login.internalAcess.user_data.User;
 
-public class WithdrawalTransaction {
+public class Withdrawal {
     // Attributes
     private User user;
 
     // Constructor
-    public WithdrawalTransaction(User user) {
+    public Withdrawal(User user) {
         this.user = user;
     }
 
     // Executions methods
-    public void withdrawal(){
+    public void transaction(){
         double withdrawal = Double.parseDouble(Input.input("Quanto deseja sacar?"));
         user.getAccount().withdrawal(withdrawal);
     }

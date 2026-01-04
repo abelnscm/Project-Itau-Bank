@@ -1,5 +1,5 @@
-package itau_bank.system.security.login.internalAcess.tools;
-import itau_bank.user_data.User;
+package itau_bank.system.security.login.internalAcess.intefaces;
+import itau_bank.system.security.login.internalAcess.user_data.User;
 
 public class Menu {
     // Attributes

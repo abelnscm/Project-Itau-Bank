@@ -1,4 +1,4 @@
-package itau_bank.user_data;
+package itau_bank.system.security.login.internalAcess.user_data;
 public class User {
 
     // Attributes

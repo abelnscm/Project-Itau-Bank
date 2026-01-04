@@ -1,23 +1,26 @@
-package itau_bank.system.security.login.internalAcess.tools;
-import itau_bank.system.security.login.internalAcess.operationsSections.DepositTransaction;
-import itau_bank.system.security.login.internalAcess.operationsSections.WithdrawalTransaction;
-import itau_bank.user_data.User;
+package itau_bank.system.security.login.internalAcess.intefaces;
+import itau_bank.system.security.login.internalAcess.operationsSections.Deposit;
+import itau_bank.system.security.login.internalAcess.operationsSections.PIX;
+import itau_bank.system.security.login.internalAcess.operationsSections.Withdrawal;
+import itau_bank.system.security.login.internalAcess.user_data.User;
 import javax.swing.*;
 
 
 public class Cases {
 
     // Attributes
-    private WithdrawalTransaction withdrawal;
-    private DepositTransaction deposit;
+    private Withdrawal withdrawal;
+    private Deposit deposit;
+    private PIX PIX;
     private User user;
     int choice;
     private String[] options = {"Sacar", "Depositar","Transferência via PIX", "Ver saldo", "Extrato", "Sair"};
 
     // Constructor
     public Cases(User user) {
-        this.withdrawal = new WithdrawalTransaction(user);
-        this.deposit =  new DepositTransaction(user);
+        this.withdrawal = new Withdrawal(user);
+        this.deposit =  new Deposit(user);
+        this.PIX = new PIX(user);
     }
 
     // Verify Methods
@@ -34,12 +37,13 @@ public class Cases {
 
         switch (choice) {
             case 0:
-                withdrawal.withdrawal();
+                withdrawal.transaction();
                 break;
             case 1:
-                deposit.deposit();
+                deposit.transaction();
                 break;
             case 2:
+                PIX.transaction();
                 break;
             case 3:
                 break;

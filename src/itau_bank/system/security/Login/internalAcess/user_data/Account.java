@@ -1,5 +1,6 @@
-package itau_bank.user_data;
-import itau_bank.system.security.login.internalAcess.tools.Messages;
+package itau_bank.system.security.login.internalAcess.user_data;
+import itau_bank.system.security.login.internalAcess.operationsSections.PIX;
+import itau_bank.system.security.register.tools.Validation;
 import itau_bank.tools.Message;
 
 
@@ -8,16 +9,21 @@ public class Account {
     private String agency;
     private String accountNumber;
     private double balance;
+    private Validation validation;
+    private User user;
+    private PIX PIX;
 
     // Constructor
     public Account(String agency, String accountNumber) {
         this.agency = agency;
         this.accountNumber = accountNumber;
         this.balance = 0;
+        this.validation = new Validation();
+
     }
 
     // Financial methods
-    public void withdrawal(Double amount){
+    public void withdrawal(Double amount){ // Realiza um saque
         if(amount < 20){
             Message.info("O valor mínimo para saque é de R$ 20,00");
             return;
@@ -30,7 +36,7 @@ public class Account {
         Message.info("Saque realizado com sucesso!");
     }
 
-    public void deposit(Double amount) {
+    public void deposit(Double amount) { // Deposita um valor na conta
         if(amount < 0.25) {
             Message.info("O valor mínimo para depósito é de R$ 0,25");
             return;
@@ -39,6 +45,9 @@ public class Account {
         this.balance += amount;
     }
 
+
+
+
     // Getters
     public String getAgency() {
         return agency;
@@ -46,11 +55,14 @@ public class Account {
     public String getAccountNumber() {
         return accountNumber;
     }
+    public User getUser() {
+        return user;
+    }
 
-
-
-
-
+    // Setters
+    public void setUser(User user) {
+        this.user = user;
+    }
 }
 
 
