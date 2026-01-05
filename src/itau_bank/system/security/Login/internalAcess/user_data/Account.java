@@ -1,7 +1,7 @@
 package itau_bank.system.security.login.internalAcess.user_data;
 import itau_bank.system.security.login.internalAcess.operationsSections.Extract;
 import itau_bank.tools.Message;
-import itau_bank.tools.TimeDate;
+import itau_bank.tools.dateTime;
 
 
 public class Account {
@@ -41,7 +41,7 @@ public class Account {
         }
         Message.info("Depósito realizado com sucesso!");
         String depositConverted = String.valueOf(amount);
-        String message = String.format("Você depositou R$ %s às %s.", depositConverted, TimeDate.now());
+        String message = String.format("Você depositou R$ %s às %s. \n", depositConverted, dateTime.now());
         extract.add(message);
         this.balance += amount;
     }

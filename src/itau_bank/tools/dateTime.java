@@ -2,7 +2,7 @@ package itau_bank.tools;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class TimeDate {
+public class dateTime {
     // Attributes
     private static final DateTimeFormatter formatter =
             DateTimeFormatter.ofPattern("HH:mm:ss dd/MM/yyyy");

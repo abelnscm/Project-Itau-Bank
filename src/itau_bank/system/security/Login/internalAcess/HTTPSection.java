@@ -1,21 +1,18 @@
 package itau_bank.system.security.login.internalAcess;
 import itau_bank.system.security.login.internalAcess.intefaces.Messages;
 import itau_bank.tools.Message;
-import itau_bank.system.security.login.internalAcess.intefaces.Options;
 import itau_bank.system.security.login.internalAcess.user_data.User;
 
 public class HTTPSection {
     // Attributes
     private User user;
-    private Options options;
     private Messages messages;
+
 
     // Constructor
     public HTTPSection(User user) {
         this.user = user;
-        this.options = new Options(user);
         this.messages = new Messages(user);
-
     }
 
     // Acessess methods
@@ -31,7 +28,6 @@ public class HTTPSection {
     // Client server
     private void menu() {
         messages.welcome();
-        options.choice();
     }
 
 

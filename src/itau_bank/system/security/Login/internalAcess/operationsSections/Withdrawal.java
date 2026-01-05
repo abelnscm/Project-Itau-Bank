@@ -10,7 +10,6 @@ public class Withdrawal {
     public Withdrawal(User user) {
         this.user = user;
     }
-
     // Executions methods
     public void transaction(){
         double withdrawal = Double.parseDouble(Input.input("Quanto deseja sacar?"));

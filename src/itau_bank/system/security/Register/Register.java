@@ -82,17 +82,6 @@ public class Register {
         database.add(user); // Adiciona no banco de dados (Database)
         Message.info("Cadastro finalizado.");
 
-
-        ////////////////////////////////////////////////////////////////////////////////////////
-        /// Log do sistema.
-        ////////////////////////////////////////////////////////////////////////////////////////
-
-        System.out.print("\n==========================================\n");
-        System.out.print("CADASTRO DE USUÁRIO");
-        System.out.print("\n==========================================\n");
-        System.out.printf(" \n 1. O usuário %s acabou de se cadastrar.\n 2. E-mail: %s\n 3. CPF: %s\n 4. Senha do usuário: %s\n 5. Agência: %s " +
-                "\n 6. Conta bancária:%s", username, email, CPF, "******", account.getAccountNumber(), account.getAgency());
-
         return user;
 
     }

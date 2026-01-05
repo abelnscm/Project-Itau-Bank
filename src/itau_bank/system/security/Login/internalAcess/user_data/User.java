@@ -16,7 +16,7 @@ public class User {
         this.CPF = CPF;
         this.account = account;
     }
-    // Specific methods
+
 
     // Getters
     public Account getAccount(){
