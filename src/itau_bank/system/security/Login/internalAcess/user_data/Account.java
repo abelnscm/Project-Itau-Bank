@@ -1,7 +1,7 @@
 package itau_bank.system.security.login.internalAcess.user_data;
-import itau_bank.system.security.login.internalAcess.operationsSections.PIX;
-import itau_bank.system.security.register.tools.Validation;
+import itau_bank.system.security.login.internalAcess.operationsSections.Extract;
 import itau_bank.tools.Message;
+import itau_bank.tools.TimeDate;
 
 
 public class Account {
@@ -9,17 +9,14 @@ public class Account {
     private String agency;
     private String accountNumber;
     private double balance;
-    private Validation validation;
     private User user;
-    private PIX PIX;
+    private Extract extract = new Extract();
 
     // Constructor
     public Account(String agency, String accountNumber) {
         this.agency = agency;
         this.accountNumber = accountNumber;
         this.balance = 0;
-        this.validation = new Validation();
-
     }
 
     // Financial methods
@@ -43,14 +40,19 @@ public class Account {
             return;
         }
         Message.info("Depósito realizado com sucesso!");
+        String depositConverted = String.valueOf(amount);
+        String message = String.format("Você depositou R$ %s às %s.", depositConverted, TimeDate.now());
+        extract.add(message);
         this.balance += amount;
     }
 
     public void PIX(double value){
         while(value < 0.10) {
             Message.info("O valor mínimo de transferência via PIX é de R$ 0,10");
+            return;
         }
         this.balance -= value;
+        Message.info("Pix realizado com sucesso!");
     }
 
     // Getters
@@ -66,7 +68,6 @@ public class Account {
     public double getBalance(){
         return this.balance;
     }
-
 
     // Setters
     public void setUser(User user) {

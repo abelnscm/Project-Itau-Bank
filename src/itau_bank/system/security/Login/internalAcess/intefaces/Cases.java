@@ -55,9 +55,10 @@ public class Cases {
                 Message.info("Abrindo seção de pix...");
                 PIX.transaction();
                 break;
-            case 3:  Message.info("Abrindo saldo bancário...");
-            balance.see();
-            break;
+            case 3:
+                Message.info("Abrindo saldo bancário...");
+                balance.see();
+                break;
 
 
 

@@ -17,6 +17,7 @@ public class ItauBank {
         User user001 = register.register();
         User loggedUser = login.login();
         HTTPSection.acessAccount(loggedUser);
+
 }
 }
 
