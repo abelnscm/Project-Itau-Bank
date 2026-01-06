@@ -1,16 +1,14 @@
-package itau_bank.system.security.login.internalAcess.intefaces;
+package itau_bank.system.security.login.internalAcess.intefaces.Messages;
 import itau_bank.system.security.login.internalAcess.user_data.User;
 import javax.swing.*;
 
 public class Messages {
     
-    // Attribute 
-    private User user;
+    // Attribute
     private String username;
 
     // Constructor
     public Messages(User user) {
-        this.user = user;
         this.username = user.getUsername();
     }
 
@@ -21,10 +19,6 @@ public class Messages {
 
     public void welcome(){
         JOptionPane.showMessageDialog(null, getWelcomeMessage());
-    }
-
-    public String messageCase() {
-        return String.format("O que deseja, %s?", user.getUsername());
     }
 
     

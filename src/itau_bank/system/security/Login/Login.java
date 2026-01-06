@@ -42,7 +42,7 @@ public class Login {
     }
 
     // Required Method
-    public String inputRequired(String message) {
+    private String inputRequired(String message) {
         String value = Input.input(message);
         while (validation.isNullOrEmpty(value)) {
             Message.info("O campo não pode estar vazio.");

@@ -1,12 +1,10 @@
 package itau_bank.system.security.login.internalAcess.operationsSections;
-import itau_bank.system.security.register.tools.Validation;
 import itau_bank.tools.Message;
 import java.util.ArrayList;
 
 public class Extract {
     // Attributes
     private ArrayList<String> history = new ArrayList<String>();
-    private Validation validation = new Validation();
 
     // Specific methods
     public void add(String register){
