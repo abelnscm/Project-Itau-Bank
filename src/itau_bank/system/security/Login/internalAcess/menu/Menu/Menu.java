@@ -1,11 +1,9 @@
-package itau_bank.system.security.login.internalAcess.intefaces.Menu;
+package itau_bank.system.security.login.internalAcess.menu.Menu;
 import itau_bank.system.security.login.internalAcess.user_data.User;
 import javax.swing.*;
-import java.awt.*;
 
 public class Menu {
     // Attributes
-    private int choice;
     private Select select;
 
     // Constructor
@@ -15,11 +13,11 @@ public class Menu {
 
     // Start method
     public void start(){
-        String[] options = {
+        final String[] options = {
                 "Sacar","Depositar","PIX",
                 "Ver saldo","Extrato","Sair"};
 
-        choice = JOptionPane.showOptionDialog(
+        final int choice = JOptionPane.showOptionDialog(
                 null,
                 "O que você deseja?",
                 "Menu",

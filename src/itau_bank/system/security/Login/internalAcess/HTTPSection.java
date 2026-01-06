@@ -1,6 +1,6 @@
 package itau_bank.system.security.login.internalAcess;
-import itau_bank.system.security.login.internalAcess.intefaces.Menu.Menu;
-import itau_bank.system.security.login.internalAcess.intefaces.Messages.Messages;
+import itau_bank.system.security.login.internalAcess.menu.Menu.Menu;
+import itau_bank.system.security.login.internalAcess.menu.Messages.Messages;
 import itau_bank.tools.Message;
 import itau_bank.system.security.login.internalAcess.user_data.User;
 

@@ -15,6 +15,5 @@ public class Deposit {
     public void transaction(){
         double deposit = Double.parseDouble(Input.input("Quanto deseja depositar?"));
         user.getAccount().deposit(deposit);
-
 }
 }

@@ -1,4 +1,4 @@
-package itau_bank.system.security.login.internalAcess.intefaces.Menu;
+package itau_bank.system.security.login.internalAcess.menu.Menu;
 import itau_bank.system.security.login.internalAcess.operationsSections.*;
 import itau_bank.system.security.login.internalAcess.user_data.User;
 import itau_bank.tools.Message;

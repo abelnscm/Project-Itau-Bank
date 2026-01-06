@@ -1,11 +1,11 @@
-package itau_bank.system.security.login.internalAcess.intefaces.Messages;
+package itau_bank.system.security.login.internalAcess.menu.Messages;
 import itau_bank.system.security.login.internalAcess.user_data.User;
 import javax.swing.*;
 
 public class Messages {
     
     // Attribute
-    private String username;
+    private final String username;
 
     // Constructor
     public Messages(User user) {
