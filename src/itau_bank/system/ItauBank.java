@@ -1,10 +1,5 @@
 package itau_bank.system;
-import itau_bank.system.security.login.interfaces.Window;
-import itau_bank.system.security.login.internalAcess.HTTPSection;
-import itau_bank.system.security.login.Login;
-import itau_bank.system.security.login.internalAcess.user_data.Database;
-import itau_bank.system.security.login.internalAcess.user_data.User;
-import itau_bank.system.security.register.Register;
+import itau_bank.system.security.interfaces.Window;
 
 public class ItauBank {
     public static void main(String[] args) {

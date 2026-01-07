@@ -1,4 +1,4 @@
-package itau_bank.system.security.login.internalAcess.menu.Messages;
+package itau_bank.system.security.login.internalAcess.menu.messages;
 import itau_bank.system.security.login.internalAcess.user_data.User;
 import javax.swing.*;
 
