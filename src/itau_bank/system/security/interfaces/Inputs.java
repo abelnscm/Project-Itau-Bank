@@ -16,6 +16,7 @@ public class Inputs {
         input.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         return input;
     }
+
     public static JPasswordField password(int y, int containerWidth){
         JPasswordField password = new JPasswordField();
 
