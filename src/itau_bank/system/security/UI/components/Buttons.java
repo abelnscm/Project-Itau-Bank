@@ -1,4 +1,4 @@
-package itau_bank.system.security.UI.resources;
+package itau_bank.system.security.UI.components;
 
 import itau_bank.system.security.UI.resources.theme.Fonts;
 

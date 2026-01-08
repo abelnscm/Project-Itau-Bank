@@ -1,5 +1,6 @@
 package itau_bank.system.security.login.internalAcess.menu.messages;
 import itau_bank.system.security.login.internalAcess.user_data.User;
+
 import javax.swing.*;
 
 public class Messages {
@@ -20,6 +21,8 @@ public class Messages {
     public void welcome(){
         JOptionPane.showMessageDialog(null, getWelcomeMessage());
     }
+
+
 
     
     

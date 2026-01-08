@@ -1,7 +1,6 @@
 package itau_bank.system.security.login.internalAcess.user_data;
 import itau_bank.system.security.login.internalAcess.operationsSections.Extract;
-import itau_bank.tools.Message;
-import itau_bank.tools.dateTime;
+import itau_bank.utils.Message;
 
 
 public class Account {
@@ -20,39 +19,32 @@ public class Account {
     }
 
     // Financial methods
-    public void withdrawal(Double amount){ // Realiza um saque
+    public boolean withdrawal(Double amount){ // Realiza um saque
         if(amount < 20){
-            Message.info("O valor mínimo para saque é de R$ 20,00");
-            return;
+            return false;
         }
         if(amount > this.balance) {
-            Message.info("Você não tem saldo suficiente.");
-            return;
+            return false;
         }
-
         this.balance -= amount;
-        Message.info("Saque realizado com sucesso!");
+        return true;
     }
 
-    public void deposit(Double amount) { // Deposita um valor na conta
+    public boolean deposit(Double amount) { // Deposita um valor na conta
         if(amount < 0.25) {
-            Message.info("O valor mínimo para depósito é de R$ 0,25");
-            return;
+            return false;
         }
-        Message.info("Depósito realizado com sucesso!");
-        String depositConverted = String.valueOf(amount);
-        String message = String.format("Você depositou R$ %s às %s. \n", depositConverted, dateTime.now());
-        extract.add(message);
         this.balance += amount;
+        return true;
     }
 
-    public void PIX(double value){
+    public boolean PIX(double value){
         while(value < 0.10) {
-            Message.info("O valor mínimo de transferência via PIX é de R$ 0,10");
-            return;
+            return false;
         }
         this.balance -= value;
-        Message.info("Pix realizado com sucesso!");
+        return true;
+
     }
 
     // Getters
@@ -68,6 +60,12 @@ public class Account {
     public double getBalance(){
         return this.balance;
     }
+
+    public Extract getExtract() {
+        return extract;
+    }
+
+
 
     // Setters
     public void setUser(User user) {

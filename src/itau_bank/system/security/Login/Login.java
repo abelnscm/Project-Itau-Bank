@@ -1,7 +1,7 @@
 package itau_bank.system.security.login;
 import itau_bank.system.security.register.tools.Validation;
-import itau_bank.tools.Input;
-import itau_bank.tools.Message;
+import itau_bank.utils.Input;
+import itau_bank.utils.Message;
 import itau_bank.system.security.login.internalAcess.user_data.Database;
 import itau_bank.system.security.login.internalAcess.user_data.User;
 
@@ -11,6 +11,7 @@ public class Login {
     private Authentication auth;
     private Database database;
     private Validation validation;
+    private User user;
 
     // Constructor
     public Login(Database database) {
@@ -24,21 +25,24 @@ public class Login {
         Message.info("Iniciando sessão de login....");
 
         // Attributes
-        String CPF;
-        String password;
+        int attempts = 8;
 
-        // Inputs
-        CPF = inputRequired("Insira seu CPF:");
-        password = inputRequired("Insira sua senha:");
-        User user = auth.auth(CPF, password); // Verificação no banco de dados
+        while (attempts > 0) {
+            String CPF = inputRequired("Insira seu CPF:");
+            String password = inputRequired("Insira sua senha:");
+            user = auth.auth(CPF, password);
 
-        if (user != null) {
-            Message.info("Usuário logado com sucesso!");
-            return user;
-        } else {
-            Message.info("Usuário não encontrado.");
-            return null;
+            if (user != null) {
+                return user;
+            }
+
+            attempts--;
+            Message.info("Usuário não encontrado");
         }
+
+        Message.info("Você excedeu o limite de tentativas. Tente novamente mais tarde.");
+        return null;
+
     }
 
     // Required Method

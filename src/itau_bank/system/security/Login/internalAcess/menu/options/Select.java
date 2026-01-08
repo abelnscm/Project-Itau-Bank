@@ -1,7 +1,7 @@
 package itau_bank.system.security.login.internalAcess.menu.options;
 import itau_bank.system.security.login.internalAcess.operationsSections.*;
 import itau_bank.system.security.login.internalAcess.user_data.User;
-import itau_bank.tools.Message;
+import itau_bank.utils.Message;
 
 public class Select {
     // Attributes

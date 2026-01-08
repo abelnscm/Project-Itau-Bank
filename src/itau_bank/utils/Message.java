@@ -1,4 +1,4 @@
-package itau_bank.tools;
+package itau_bank.utils;
 import javax.swing.*;
 
 public class Message {
@@ -8,6 +8,7 @@ public class Message {
         JOptionPane.showMessageDialog(null, message);
         return message;
     }
+
 
 
 

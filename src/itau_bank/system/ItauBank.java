@@ -1,10 +1,11 @@
 package itau_bank.system;
+import itau_bank.system.security.UI.MainWindow;
 import itau_bank.system.security.login.Login;
 import itau_bank.system.security.login.internalAcess.HTTPSection;
 import itau_bank.system.security.login.internalAcess.user_data.Database;
 import itau_bank.system.security.login.internalAcess.user_data.User;
 import itau_bank.system.security.register.Register;
-
+import java.awt.*;
 
 public class ItauBank {
     public static void main(String[] args) {
@@ -19,7 +20,7 @@ public class ItauBank {
         User loggedUser = login.login();
         HTTPSection.acessAccount(loggedUser);
 
-//        Window window = new Window();
+//        MainWindow window = new MainWindow();
 //        window.login();
 }
 }

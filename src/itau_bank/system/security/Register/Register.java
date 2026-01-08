@@ -1,7 +1,7 @@
 package itau_bank.system.security.register;
 import itau_bank.system.security.register.tools.Validation;
-import itau_bank.tools.Input;
-import itau_bank.tools.Message;
+import itau_bank.utils.Input;
+import itau_bank.utils.Message;
 import itau_bank.system.security.login.internalAcess.user_data.Account;
 import itau_bank.system.security.register.tools.AccountGenerator;
 import itau_bank.system.security.login.internalAcess.user_data.Database;
@@ -32,54 +32,54 @@ public class Register {
 
         // e-mail
         email = Input.input("Insira um e-mail:");
-        while(validation.isNullOrEmpty(email)) { // Verifica se o usuário preencheu o campo
+        while(validation.isNullOrEmpty(email)) {
             Message.info( "O campo não pode estar vazio.");
             email = Input.input("Insira um e-mail:");
         }
 
         // username
         username = Input.input("Escolha um nome de usuário:");
-        while(validation.isNullOrEmpty(username)) { // Verifica se o usuário preencheu o campo
+        while(validation.isNullOrEmpty(username)) {
             Message.info("O campo não pode estar vazio.");
             username = Input.input("Escolha um nome de usuário:");
         }
 
         // password
         password = Input.input("Crie uma senha de 6 dígitos:");
-        while (validation.isNullOrEmpty(password)) { // Verifica se o usuário preencheu
+        while (validation.isNullOrEmpty(password)) {
             Message.info("O campo não pode estar vazio.");
             password = Input.input("Crie uma senha de 6 dígitos:");
         }
-        while (validation.isPasswordValid(password)) { // Verifica se a senha possui 6 dígitos
+        while (validation.isPasswordValid(password)) {
             Message.info("A senha precisa ter 6 dígitos");
             password = Input.input("Crie sua senha:");
         }
 
         // Confirm password
         secondPassword = Input.input("Repita sua senha:");
-        while(validation.isTwoPasswordValid(password, secondPassword)) { // Verifica se as senhas são iguais
+        while(validation.isTwoPasswordValid(password, secondPassword)) {
             Message.info("As senhas não podem ser diferentes.");
             secondPassword = Input.input("Repita sua senha:");
         }
 
         // CPF
         CPF = Input.input("Insira seu CPF para finalizar o cadastro:");
-        while (validation.isNullOrEmpty(CPF)) { // Verifica se o usuário preencheu o campo
+        while (validation.isNullOrEmpty(CPF)) {
             Message.info("O campo não pode estar vazio.");
             CPF = Input.input("Insira seu CPF para finalizar o cadastro:");
         }
-        while (validation.isCpfValid(CPF)) { // Verifica se o CPF tem 11 dígitos
+        while (validation.isCpfValid(CPF)) {
             Message.info("CPF inválido!");
             CPF = Input.input("Insira seu CPF para finalizar o cadastro:");
         }
 
-        do {agency = acc.generateAgency(); accountNumber = acc.generateAccount();} // Autenticação de conta bancária e agência
+        do {agency = acc.generateAgency(); accountNumber = acc.generateAccount();}
         while (database.accountExists(agency, accountNumber));
 
-        Account account = new Account(agency, accountNumber); // A conta é atribuída ao usuário
-        User user = new User(username, email, password, CPF, account); // Constrói o usuário
-        account.setUser(user); // Associa o usuário à conta
-        database.add(user); // Adiciona no banco de dados (Database)
+        Account account = new Account(agency, accountNumber);
+        User user = new User(username, email, password, CPF, account);
+        account.setUser(user);
+        database.add(user);
         Message.info("Cadastro finalizado.");
 
         return user;
