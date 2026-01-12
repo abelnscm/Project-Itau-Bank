@@ -10,19 +10,17 @@ public class Extract {
     public void add(String register){
         history.add(register);
     }
+
     public String show(){
-        String design = "EXTRATO BANCÁRIO\n";
-        String result = "\n ";
 
-        if (history.isEmpty()) {
-            return Message.info("O extrato ainda está vazio.");
-        }
+        if (history.isEmpty()) {return Message.info("O extrato ainda está vazio.");}
 
+        String result = "EXTRATO BANCÁRIO\n\n";
         for(String extract: history){
          result += extract + "\n";
         }
 
-        return Message.info(design + result);
+        return result;
     }
 
 }

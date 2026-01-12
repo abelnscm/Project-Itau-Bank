@@ -1,8 +1,20 @@
 package itau_bank.system.security.login.internal_acess.user_data;
+import itau_bank.system.security.exceptions.InsufficientBalanceException;
+import itau_bank.system.security.exceptions.InvalidAmountException;
+import itau_bank.system.security.exceptions.MinValueException;
 import itau_bank.system.security.login.internal_acess.operations_sections.Extract;
+import itau_bank.utils.Message;
 
 
 public class Account {
+
+    // CONSTANTS
+    private static final double MIN_PIX = 0.10;
+    private static final double MIN_WITHDRAWAL = 20.00;
+    private static final double MIN_DEPOSIT = 0.25;
+    private static final double MIN_AMOUNT = 0;
+
+
     // Attributes
     private String agency;
     private String accountNumber;
@@ -18,31 +30,45 @@ public class Account {
     }
 
     // Financial methods
-    public boolean withdrawal(Double amount){ // Realiza um saque
-        if(amount < 20){
-            return false;
+    public void withdrawal(double amount){
+
+        if(amount <= MIN_AMOUNT) {
+            throw new InvalidAmountException();
         }
-        if(amount > this.balance) {
-            return false;
+        if(amount < MIN_WITHDRAWAL){
+            throw new MinValueException(MIN_WITHDRAWAL);
         }
-        this.balance -= amount;
-        return true;
+        if(amount > balance) {
+            throw new InsufficientBalanceException("Seu saldo é insuficiente para esta transação.");
+        }
+
+        balance -= amount;
     }
 
-    public boolean deposit(Double amount) { // Deposita um valor na conta
-        if(amount < 0.25) {
-            return false;
+    public void deposit(double amount) {
+
+        if(amount <= MIN_AMOUNT) {
+            throw new InvalidAmountException();
         }
-        this.balance += amount;
-        return true;
+        if(amount < MIN_DEPOSIT) {
+            throw new MinValueException(MIN_DEPOSIT);
+        }
+        balance += amount;
     }
 
-    public boolean PIX(double value){
-        while(value < 0.10) {
-            return false;
+    public void PIX(double value){
+
+        if(value <= MIN_AMOUNT) {
+            throw new InvalidAmountException();
         }
-        this.balance -= value;
-        return true;
+        if(value < MIN_PIX) {
+            throw new MinValueException(MIN_PIX);
+        }
+        if (value > balance) {
+            throw new InsufficientBalanceException("Saldo insuficiente para o PIX.");
+        }
+
+        balance -= value;
 
     }
 
@@ -59,14 +85,12 @@ public class Account {
     public double getBalance(){
         return this.balance;
     }
-
     public Extract getExtract() {
         return extract;
     }
 
-
-
     // Setters
+
     public void setUser(User user) {
         this.user = user;
     }
