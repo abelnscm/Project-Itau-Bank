@@ -3,16 +3,16 @@ package itau_bank.system.security.register.utils;
 public class Validation {
 
     // Specific methods
-    public boolean isNullOrEmpty(String value) {  // Verifica se o usuário digitou ou cancelou (NUll)
+    public boolean isNullOrEmpty(String value) {
         return value == null || value.isEmpty();
     }
-    public boolean isPasswordValid(String password) { // Verifica se a senha possui 6 dígitos
-        return password != null && password.length() != 6;
+    public boolean isPasswordValid(String password) {
+        return password != null && password.length() == 6;
     }
-    public boolean isTwoPasswordValid(String passwordOne, String passwordTwo){ // Verifica se as senhas são iguais
-        return !passwordOne.equals(passwordTwo);
+    public boolean isTwoPasswordValid(String passwordOne, String passwordTwo){
+        return passwordOne.equals(passwordTwo);
     }
-    public boolean isCpfValid(String cpf) { // Verifica se o CPF é válido
-        return cpf == null || cpf.length() != 11;
+    public boolean isCPFValid(String CPF) { // Verifica se o CPF é válido
+        return CPF != null && CPF.length() == 11;
     }
 }
