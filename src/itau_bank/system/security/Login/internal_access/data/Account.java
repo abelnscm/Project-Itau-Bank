@@ -1,8 +1,8 @@
-package itau_bank.system.security.login.internal_access.user_data;
+package itau_bank.system.security.login.internal_access.data;
 import itau_bank.system.security.exceptions.account.InsufficientBalanceException;
 import itau_bank.system.security.exceptions.account.InvalidAmountException;
 import itau_bank.system.security.exceptions.account.MinValueException;
-import itau_bank.system.security.login.internal_access.operations_sections.Extract;
+import itau_bank.system.security.login.internal_access.transactions.Extract;
 
 public class Account {
 

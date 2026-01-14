@@ -1,5 +1,5 @@
-package itau_bank.system.security.login.internal_access.operations_sections;
-import itau_bank.system.security.login.internal_access.user_data.User;
+package itau_bank.system.security.login.internal_access.transactions;
+import itau_bank.system.security.login.internal_access.data.User;
 import itau_bank.system.utils.Message;
 
 public class Balance {

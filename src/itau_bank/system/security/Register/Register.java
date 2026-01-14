@@ -1,10 +1,9 @@
 package itau_bank.system.security.register;
-import itau_bank.system.security.register.utils.FormattedInput;
 import itau_bank.system.security.register.utils.Validation;
-import itau_bank.system.security.login.internal_access.user_data.Account;
+import itau_bank.system.security.login.internal_access.data.Account;
 import itau_bank.system.security.register.utils.AccountGenerator;
-import itau_bank.system.security.login.internal_access.user_data.Database;
-import itau_bank.system.security.login.internal_access.user_data.User;
+import itau_bank.system.security.login.internal_access.data.Database;
+import itau_bank.system.security.login.internal_access.data.User;
 
 
 public class Register {

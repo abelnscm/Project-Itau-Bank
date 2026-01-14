@@ -1,10 +1,10 @@
-package itau_bank.system.security.login.internal_access.menu.options;
-import itau_bank.system.security.login.internal_access.user_data.User;
+package itau_bank.system.security.login.internal_access.menu;
+import itau_bank.system.security.login.internal_access.data.User;
 import javax.swing.*;
 
 public class Menu {
     // Attributes
-    private Select select;
+    private final Select select;
 
     // Constructor
     public Menu(User user) {

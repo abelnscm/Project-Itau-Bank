@@ -1,33 +1,37 @@
 package itau_bank.system.security.login;
-import itau_bank.system.security.register.utils.Validation;
-import itau_bank.system.security.login.internal_access.user_data.Database;
-import itau_bank.system.security.login.internal_access.user_data.User;
+import itau_bank.system.security.login.internal_access.data.Database;
+import itau_bank.system.security.login.internal_access.data.User;
 
 public class Authentication {
 
     // Attributes
-    private Validation validation;
-    private Database database;
+    private final Database database;
     private User user;
+    private String CPF;
+    private String password;
 
     // Constructor
-    public Authentication(Database database) {
+    public Authentication(Database database,
+                          String CPF,
+                          String password)
+    {
         this.database = database;
-        this.validation = new Validation();
+        this.CPF = CPF;
+        this.password = password;
     }
 
     // Auth method
-    public User auth(String CPF, String password) {
-        for(User user : database.getDatabase()){
-            boolean sameCPF = user.getCPF().equals(CPF);
-            boolean samePassword = user.getPassword().equals(password);
-
-            if(sameCPF && samePassword) {
+    public User authenticate() {
+        for (User user : database.getDatabase()) {
+            if (user.getCPF().equals(CPF) &&
+                    user.getPassword().equals(password)) {
                 return user;
             }
         }
-        return null;
+        throw new IllegalArgumentException("CPF ou senha inválidos.");
     }
+
+
 
 
 }
