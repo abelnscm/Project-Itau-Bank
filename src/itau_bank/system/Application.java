@@ -7,20 +7,25 @@ import itau_bank.system.security.register.Register;
 import itau_bank.system.security.register.RegisterUI;
 
 public class Application {
-    public static void start() {
 
-        Database db = new Database();
-        Register register = new Register(db);
-        RegisterUI registerUI = new RegisterUI(register);
-        LoginUI login = new LoginUI(db);
+    private final Database database;
+    private final Register register ;
+    private final RegisterUI registerUI;
+    private final LoginUI login;
 
+    // Constructor
+    public Application() {
+        this.database = new Database();
+        this.register  = new Register(database);
+        this.registerUI = new RegisterUI(register);
+        this.login = new LoginUI(database);
 
+    }
+
+    // Inicalizate method
+    public void start() {
         registerUI.start();
         User user = login.start();
         HTTP.start(user);
-
-
-
-
     }
 }
