@@ -1,7 +1,6 @@
 package itau_bank.system.utils;
-
-
 import javax.swing.*;
+
 public class Input {
 
     // Inputs

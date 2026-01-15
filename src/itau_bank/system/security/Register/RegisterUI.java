@@ -1,4 +1,5 @@
 package itau_bank.system.security.register;
+import itau_bank.system.security.exceptions.register.RegisterException;
 import itau_bank.system.security.register.utils.FormattedInput;
 import itau_bank.system.utils.Message;
 
@@ -22,7 +23,6 @@ public class RegisterUI {
     public void start() {
         while (true) {
             try {
-
                 email = input.required("Digite seu e-mail:");
                 username = input.required("Crie um nome de usuário:");
                 password = input.requiredPassword("Crie uma senha de 6 dígitos:");
@@ -34,7 +34,7 @@ public class RegisterUI {
                 Message.info("Abrindo seção de login...");
                 break;
 
-            } catch (IllegalArgumentException e) {
+            } catch (RegisterException e) {
                 Message.info(e.getMessage());
             }
         }

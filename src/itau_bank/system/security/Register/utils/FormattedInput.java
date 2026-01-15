@@ -22,10 +22,6 @@ public class FormattedInput {
             Message.info("A senha não pode ser vazia.");
             value = Input.input(message);
         }
-        while (!validation.isPasswordValid(value)) {
-            Message.info("A senha precisa ter 6 dígitos.");
-            value = Input.input(message);
-        }
         return value;
     }
 
@@ -33,10 +29,6 @@ public class FormattedInput {
         String value = Input.input(message);
         while (validation.isNullOrEmpty(value)) {
             Message.info("O CPF não pode ser vazio.");
-            value = Input.input(message);
-        }
-        while (!validation.isCPFValid(value)) {
-            Message.info("CPF inválido!");
             value = Input.input(message);
         }
         return value;

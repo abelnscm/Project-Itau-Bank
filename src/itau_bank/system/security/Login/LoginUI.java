@@ -8,12 +8,12 @@ public class LoginUI {
 
     // Attributes
     private final Database database;
-
-    private FormattedInput input = new FormattedInput();
+    private FormattedInput input;
 
     // Constructor
-    public LoginUI(Database database) {
+    public LoginUI(Database database, FormattedInput formattedInput) {
         this.database = database;
+        this.input = formattedInput;
     }
 
     // Specific methods

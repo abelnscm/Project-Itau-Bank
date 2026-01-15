@@ -12,7 +12,7 @@ public class Validation {
     public boolean isTwoPasswordValid(String passwordOne, String passwordTwo){
         return passwordOne.equals(passwordTwo);
     }
-    public boolean isCPFValid(String CPF) { // Verifica se o CPF é válido
+    public boolean isCPFValid(String CPF) {
         return CPF != null && CPF.length() == 11;
     }
 }
