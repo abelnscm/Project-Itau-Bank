@@ -1,13 +1,13 @@
 package itau_bank.system.security.register;
 import itau_bank.system.security.exceptions.register.RegisterException;
-import itau_bank.system.security.register.utils.FormattedInput;
+import itau_bank.system.utils.FormattedInput;
 import itau_bank.system.utils.Message;
 
 public class RegisterUI {
 
     // Attributes
     private Register register;
-    private FormattedInput input = new FormattedInput();
+    private FormattedInput input;
     private String username;
     private String email;
     private String password;
@@ -15,8 +15,9 @@ public class RegisterUI {
     private String secondPassword;
 
     // Constructor
-    public RegisterUI(Register register) {
+    public RegisterUI(Register register, FormattedInput formattedInput) {
         this.register = register;
+        this.input = formattedInput;
     }
 
     // Boot Method

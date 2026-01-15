@@ -1,4 +1,4 @@
-package itau_bank.system.security.register.utils;
+package itau_bank.system.utils;
 
 public class Validation {
 

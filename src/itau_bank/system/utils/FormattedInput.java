@@ -1,12 +1,16 @@
-package itau_bank.system.security.register.utils;
-import itau_bank.system.utils.Input;
-import itau_bank.system.utils.Message;
+package itau_bank.system.utils;
 
 public class FormattedInput {
 
     // Attributes
-    Validation validation = new Validation();
+    Validation validation;
 
+    // Constructor
+    public FormattedInput(Validation validation) {
+        this.validation = validation;
+    }
+
+    // Required inputs
     public String required(String message) {
         String value = Input.input(message);
         while (validation.isNullOrEmpty(value)) {
@@ -34,5 +38,9 @@ public class FormattedInput {
         return value;
 
     }
+
+
+
+
 
 }

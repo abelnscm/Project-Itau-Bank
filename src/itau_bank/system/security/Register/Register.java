@@ -1,11 +1,11 @@
     package itau_bank.system.security.register;
     import itau_bank.system.security.exceptions.register.InvalidCpfException;
     import itau_bank.system.security.exceptions.register.InvalidPasswordException;
-    import itau_bank.system.security.register.utils.Validation;
     import itau_bank.system.security.login.internal_access.data.Account;
     import itau_bank.system.security.register.utils.AccountGenerator;
     import itau_bank.system.security.login.internal_access.data.Database;
     import itau_bank.system.security.login.internal_access.data.User;
+    import itau_bank.system.utils.Validation;
 
 
     public class Register {
