@@ -1,4 +1,4 @@
-package itau_bank.system.bootstrap;
+package itau_bank.system.app;
 import itau_bank.system.security.login.services.HTTP;
 import itau_bank.system.security.login.LoginUI;
 import itau_bank.system.security.login.internal_access.data.User;

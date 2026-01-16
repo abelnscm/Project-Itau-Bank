@@ -17,7 +17,6 @@ public class User {
         this.account = account;
     }
 
-
     // Getters
     public Account getAccount(){
         return this.account;

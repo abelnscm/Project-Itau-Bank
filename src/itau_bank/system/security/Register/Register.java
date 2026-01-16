@@ -15,7 +15,6 @@
         private final Database database;
         private final Validation validation;
 
-
         // Constructor
         public Register(Database database, AccountGenerator accountGenerator, Validation validation) {
             this.database = database;

@@ -1,4 +1,4 @@
-package itau_bank.system.bootstrap;
+package itau_bank.system.app;
 
 import itau_bank.system.security.login.LoginUI;
 import itau_bank.system.security.login.internal_access.data.Database;
@@ -17,10 +17,8 @@ public class CompositionRoot {
         Validation validation = new Validation();
         FormattedInput formattedInput = new FormattedInput(validation);
         AccountGenerator acc = new AccountGenerator();
-
         Authentication auth = new Authentication(database);
         Register register = new Register(database, acc, validation);
-
         RegisterUI registerUI = new RegisterUI(register, formattedInput);
         LoginUI loginUI = new LoginUI(database, formattedInput, auth);
 
