@@ -10,7 +10,6 @@ import itau_bank.system.utils.FormattedInput;
 import itau_bank.system.utils.Validation;
 
 public class CompositionRoot {
-
     public Application build() {
 
         Database database = new Database();
