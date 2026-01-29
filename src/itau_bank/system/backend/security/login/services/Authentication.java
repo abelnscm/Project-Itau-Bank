@@ -1,14 +1,12 @@
 package itau_bank.system.backend.security.login.services;
 import itau_bank.system.backend.security.exceptions.login.InvalidAuthenticationException;
-import itau_bank.system.backend.security.login.internal_access.data.Database;
-import itau_bank.system.backend.security.login.internal_access.data.User;
+import itau_bank.system.backend.security.login.domains.Database;
+import itau_bank.system.backend.security.login.domains.User;
 
 public class Authentication {
 
     // Attributes
     private final Database database;
-    private User user;
-
 
     // Constructor
     public Authentication(Database database) {

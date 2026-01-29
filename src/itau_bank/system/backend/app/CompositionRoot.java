@@ -1,11 +1,11 @@
 package itau_bank.system.backend.app;
 
 import itau_bank.system.frontend.LoginUI;
-import itau_bank.system.backend.security.login.internal_access.data.Database;
+import itau_bank.system.backend.security.login.domains.Database;
 import itau_bank.system.backend.security.login.services.Authentication;
 import itau_bank.system.backend.security.register.Register;
 import itau_bank.system.frontend.RegisterUI;
-import itau_bank.system.backend.security.register.utils.AccountGenerator;
+import itau_bank.system.backend.security.register.AccountGenerator;
 import itau_bank.system.frontend.utils.FormattedInput;
 import itau_bank.system.backend.utils.Validation;
 

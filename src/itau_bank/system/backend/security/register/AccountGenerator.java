@@ -1,4 +1,4 @@
-package itau_bank.system.backend.security.register.utils;
+package itau_bank.system.backend.security.register;
 import java.util.Random;
 
 public class AccountGenerator {

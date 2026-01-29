@@ -1,9 +1,9 @@
 package itau_bank.system.frontend;
+import itau_bank.system.backend.security.exceptions.login.InvalidAuthenticationException;
 import itau_bank.system.frontend.utils.FormattedInput;
 import itau_bank.system.frontend.utils.Message;
-import itau_bank.system.backend.security.exceptions.login.LoginException;
-import itau_bank.system.backend.security.login.internal_access.data.Database;
-import itau_bank.system.backend.security.login.internal_access.data.User;
+import itau_bank.system.backend.security.login.domains.Database;
+import itau_bank.system.backend.security.login.domains.User;
 import itau_bank.system.backend.security.login.services.Authentication;
 
 public class LoginUI {
@@ -28,7 +28,7 @@ public class LoginUI {
                 String password = input.requiredPassword("Insira sua senha");
                 return authentication.authenticate(CPF, password);
 
-            } catch (LoginException e) {
+            } catch(InvalidAuthenticationException e) {
                 Message.info(e.getMessage());
             }
         }

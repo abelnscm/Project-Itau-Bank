@@ -1,8 +1,8 @@
-package itau_bank.system.backend.security.login.internal_access.data;
+package itau_bank.system.backend.security.login.domains;
 import itau_bank.system.backend.security.exceptions.account.InsufficientBalanceException;
 import itau_bank.system.backend.security.exceptions.account.InvalidAmountException;
 import itau_bank.system.backend.security.exceptions.account.MinValueException;
-import itau_bank.system.backend.security.login.internal_access.transactions.Extract;
+
 
 public class Account {
 
@@ -17,7 +17,6 @@ public class Account {
     private String accountNumber;
     private double balance;
     private User user;
-    private Extract extract = new Extract();
 
     // Constructor
     public Account(String agency, String accountNumber) {
@@ -82,9 +81,7 @@ public class Account {
     public double getBalance(){
         return this.balance;
     }
-    public Extract getExtract() {
-        return extract;
-    }
+
 
     // Setters
     public void setUser(User user) {

@@ -8,7 +8,7 @@ public final class DATE_TIME {
             DateTimeFormatter.ofPattern("HH:mm:ss dd/MM/yyyy");
 
     // Methods
-    public static String NOW() {
+    public static String now() {
         return LocalDateTime.now().format(FORMATTER);
     }
 

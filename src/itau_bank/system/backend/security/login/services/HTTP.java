@@ -1,14 +1,14 @@
 package itau_bank.system.backend.security.login.services;
-import itau_bank.system.backend.security.login.internal_access.menu.Menu;
-import itau_bank.system.backend.security.login.internal_access.data.User;
+
+import itau_bank.system.backend.security.login.domains.User;
 
 public class HTTP {
-    // Attributes
-    private final Menu menu;
+
+    private User user;
 
     // Constructor
     public HTTP(User user) {
-        this.menu = new Menu(user);
+        this.user = user;
     }
 
     // Session Access
@@ -18,7 +18,7 @@ public class HTTP {
 
     // Client server
     private void access() {
-        menu.start();
+        System.out.printf("Você acessou! %s.", user.getUsername());
     }
 
 

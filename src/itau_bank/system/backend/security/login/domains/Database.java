@@ -1,4 +1,4 @@
-package itau_bank.system.backend.security.login.internal_access.data;
+package itau_bank.system.backend.security.login.domains;
 import java.util.ArrayList;
 
 public class Database {

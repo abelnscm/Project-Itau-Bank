@@ -1,10 +1,9 @@
     package itau_bank.system.backend.security.register;
     import itau_bank.system.backend.security.exceptions.register.InvalidCpfException;
     import itau_bank.system.backend.security.exceptions.register.InvalidPasswordException;
-    import itau_bank.system.backend.security.login.internal_access.data.Account;
-    import itau_bank.system.backend.security.register.utils.AccountGenerator;
-    import itau_bank.system.backend.security.login.internal_access.data.Database;
-    import itau_bank.system.backend.security.login.internal_access.data.User;
+    import itau_bank.system.backend.security.login.domains.Account;
+    import itau_bank.system.backend.security.login.domains.Database;
+    import itau_bank.system.backend.security.login.domains.User;
     import itau_bank.system.backend.utils.Validation;
 
 
