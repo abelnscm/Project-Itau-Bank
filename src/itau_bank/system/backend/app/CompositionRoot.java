@@ -11,7 +11,6 @@ import itau_bank.system.backend.utils.Validation;
 
 public class CompositionRoot {
     public App build() {
-
         Database database = new Database();
         Validation validation = new Validation();
         FormattedInput formattedInput = new FormattedInput(validation);
